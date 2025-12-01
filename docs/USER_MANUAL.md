@@ -1,11 +1,12 @@
-#STORAGE MANAGER — MANUAL DE USUARIO
+STORAGE MANAGER — MANUAL DE USUARIO
+---------------------
 
-##Introducción
+Introducción
 -------------
 Storage Manager es una herramienta para administrar dispositivos de
 almacenamiento en Linux mediante una interfaz de línea de comandos (CLI).
 
-##1. RAID
+1. RAID
 --------
 Crear RAID1:
     sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 <disk1> <disk2>
@@ -16,7 +17,7 @@ Monitorear RAID:
 Detener RAID:
     sudo mdadm --stop /dev/md0
 
-##2. LVM
+2. LVM
 ------
 Crear PV:
     sudo pvcreate /dev/loop0
@@ -31,7 +32,7 @@ Montar LV:
     sudo mkfs.ext4 /dev/vg1/lv1
     sudo mount /dev/vg1/lv1 /mnt
 
-##3. Sistemas de Archivos
+3. Sistemas de Archivos
 ------------------------
 Crear filesystem:
     sudo mkfs.ext4 /dev/md0
@@ -42,14 +43,14 @@ Montar:
 Desmontar:
     sudo umount /mnt
 
-##4. Swap
+4. Swap
 --------
 Crear swap:
     dd if=/dev/zero of=/swapfile bs=1M count=1024
     mkswap /swapfile
     swapon /swapfile
 
-##5. Backups
+5. Backups
 -----------
 Backup completo:
     rsync -a SRC/ DEST/full_
@@ -57,7 +58,7 @@ Backup completo:
 Backup incremental:
     rsync -a --link-dest=DEST/full_ SRC/ DEST/inc_
 
-##6. Seguridad
+6. Seguridad
 ------------
 ACL:
     setfacl -m u:user:rw file
@@ -66,7 +67,7 @@ LUKS:
     cryptsetup luksFormat /dev/sdx
     cryptsetup open /dev/sdx secure
 
-##7. Demonio e IPC
+7. Demonio e IPC
 -----------------
 Iniciar daemon:
     sudo ./storage_daemon &
