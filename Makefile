@@ -14,7 +14,7 @@ storage_daemon: $(OBJ)
 	$(CC) $(OBJ) -o storage_daemon
 
 storage_cli:
-	$(CC) cli/storage_cli.c -Iinclude -o storage_cli
+	$(CC) cli/storage_cli.c src/utils.o -Iinclude -o storage_cli
 
 clean:
 	rm -f $(OBJ) storage_daemon storage_cli
