@@ -1,11 +1,12 @@
-#STORAGE MANAGER — DISEÑO DEL SISTEMA
+STORAGE MANAGER — DISEÑO DEL SISTEMA
+---------------------
 
-##Arquitectura General
+Arquitectura General
 ---------------------
 El proyecto se divide en módulos independientes dentro de "src/" que se
 comunican únicamente a través de funciones declaradas en "include/".
 
-##Módulos Principales
+Módulos Principales
 -------------------
 1. RAID Manager
    - Implementa funciones para crear y administrar arreglos RAID usando mdadm.
@@ -31,7 +32,7 @@ comunican únicamente a través de funciones declaradas en "include/".
 8. Monitor
    - Obtiene estadísticas básicas (en esta versión inicial: placeholder).
 
-##Daemon + IPC
+Daemon + IPC
 -------------
 El daemon se ejecuta en segundo plano utilizando:
 • double fork()
@@ -39,11 +40,11 @@ El daemon se ejecuta en segundo plano utilizando:
 • creación de /var/run/storage_mgr.sock
 El IPC usa sockets UNIX tipo stream.
 
-##Kernel Module
+Kernel Module
 --------------
 Implementa /proc/storage_stats usando la API seq_file.
 
-##Independencia de Módulos
+Independencia de Módulos
 -------------------------
 Cada módulo puede compilarse sin depender del funcionamiento de los otros,
 cumpliendo con el requisito de trabajo en paralelo.
