@@ -1,12 +1,13 @@
-#STORAGE MANAGER — README
+STORAGE MANAGER — README
+---------------------
 
-##Descripción
+Descripción
 ------------
 Este proyecto implementa un sistema de gestión de almacenamiento para Linux,
 incluyendo RAID, LVM, sistemas de archivos, swap, backups, seguridad, un daemon
 con IPC por socket UNIX y un módulo del kernel para estadísticas.
 
-##Características principales
+Características principales
 ---------------------------
 • Gestión de RAID mediante "mdadm".
 • Gestión de LVM (PV/VG/LV).
@@ -18,19 +19,19 @@ con IPC por socket UNIX y un módulo del kernel para estadísticas.
 • Daemon en segundo plano con servidor IPC.
 • Módulo del kernel que expone estadísticas en /proc/storage_stats.
 
-##Compilación
+Compilación
 -----------
 make
 
-##Ejecución del daemon
+Ejecución del daemon
 --------------------
 sudo ./storage_daemon &
 
-##Uso del CLI
+Uso del CLI
 -----------
 ./storage_cli <comandos>
 
-##Requisitos
+Requisitos
 ----------
 • Linux
 • mdadm
